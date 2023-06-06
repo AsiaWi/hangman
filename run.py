@@ -15,12 +15,34 @@ def pick_random_word(web2set):
 def print_randomly_selected_word(word):
     print('_'* len(word))
     
-    
+def letter_choice():
+    letter= input('Enter the letter here:')
+    while len(letter) != 1 or not letter.isalpha():
+        print('Please enter only single letters')
+        letter= input('Enter the letter here:')
+    print (letter.upper())
+
+def check_letter(letter, word):
+    chances= 6
+    correct_guess= []
+    incorrect_guess= []
+    if letter in word:
+        correct_guess += letter
+    else:
+       chances -= 1
+       incorrect_guess += letter
+       if chances == 0:
+        print('sorry,,,,,')
+
+            
+
 def main():
-    print('Welcome to Hangman game! Guess the word and save his life:)')
+    print('Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
     print_randomly_selected_word(word)
-   
+    letter=letter_choice()
+    check_letter(letter, word)
     
 main()
+
