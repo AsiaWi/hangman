@@ -11,7 +11,7 @@ def print_hangman(values):
     print("  _______________|_|___")
     print("  `````````````````````")
     print()
-
+    
     def print_hangman_win():
         print()
         print("\t +--------+")

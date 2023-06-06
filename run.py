@@ -13,36 +13,58 @@ def pick_random_word(web2set):
     return word
 
 def print_randomly_selected_word(word):
-    print('_'* len(word))
+    print(' _ '* len(word))
     
 def letter_choice():
+    hangman_values = ['O','/','|','\\','|','/','\\']
+    show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    hangman.print_hangman(show_hangman_values)
     letter= input('Enter the letter here:')
     while len(letter) != 1 or not letter.isalpha():
         print('Please enter only single letters')
         letter= input('Enter the letter here:')
-    print (letter.upper())
+    return (letter.upper())
 
 def check_letter(letter, word):
+    display_character= []
     chances= 6
+    max_chances= 6
     correct_guess= []
     incorrect_guess= []
+    hangman_values = ['O','/','|','\\','|','/','\\']
+    show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
+
     if letter in word:
         correct_guess += letter
+        return correct_guess
     else:
-       chances -= 1
-       incorrect_guess += letter
-       if chances == 0:
-        print('sorry,,,,,')
+        show_hangman_values[0]= hangman_values[0]
+        chances -= 1
+        incorrect_guess += letter
+        
+        hangman.print_hangman(hangman_values)
+        print('no')
+        if chances == 0:
+           print('GAME OVER!')
+          
+           print('The word was {word}')
 
-            
+def print_guessed_letter(word, correct_guess):
+    for letter in word:
+        if letter in word:
+            print('{}'.format(letter),end='')
+        else:
+            print('_', end='')    
 
 def main():
     print('Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
+    print(word)
     print_randomly_selected_word(word)
     letter=letter_choice()
-    check_letter(letter, word)
-    
+    correct_guess=check_letter(letter, word)
+    #print_guessed_letter(word, correct_guess)
+   
 main()
 
