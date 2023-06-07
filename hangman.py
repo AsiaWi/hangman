@@ -16,7 +16,6 @@ def print_hangman(values):
         print()
         print("\t +--------+")
         print("\t         | |")
- 
         print("\t         | |")
         print("\t O       | |")
         print("\t/|\\      | |")
