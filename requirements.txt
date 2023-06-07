@@ -1,1 +1,1 @@
-# Your requirements go here
+english-words==2.0.1
