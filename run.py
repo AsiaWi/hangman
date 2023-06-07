@@ -25,9 +25,6 @@ def print_the_word(correct_guess, word):
             print(' _ ', end='')
     
 def letter_choice():
-    hangman_values = ['O','/','|','\\','|','/','\\']
-    show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
-    hangman.print_hangman(show_hangman_values)
     letter= input('Enter the letter here:')
     if len(letter) != 1 or not letter.isalpha():
         print('Please enter only single letters')
