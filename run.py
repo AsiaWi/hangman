@@ -32,13 +32,13 @@ def letter_choice():
     return (letter.upper())
 
 def check_letter(word):
-    clear()
     chances= 0
     correct_guess= []
     incorrect_guess= []
     hangman_values = ['O','/','|','\\','|','/','\\']
     show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
     while True:
+        clear()
         hangman.print_hangman(show_hangman_values)
         print_the_word(correct_guess, word)
         print('\n')
@@ -58,7 +58,6 @@ def check_letter(word):
             else:    
                 print("Bad luck! Try again, this letter doesn't exist inside the word")
                 incorrect_guess += letter
-    clear()
 
 def main():
     print('Welcome to Hangman game! Guess the word:)')
