@@ -8,6 +8,9 @@ import os
 from english_words import get_english_words_set
 web2set = get_english_words_set(['web2'])
 
+from pyfiglet import Figlet
+f = Figlet(font='slant')
+
 def clear():
     os.system("clear")
 
@@ -35,7 +38,7 @@ def game_over(word, chances):
     if chances == 7:
         clear()
         print()
-        print('     GAME OVER!      ')
+        print(f.renderText('     GAME OVER :  (      '))
         print(f'  The word was: {word}  ')
         return True
     else:
@@ -45,9 +48,10 @@ def winner(word, correct_guess):
         if len(set(word)) == len(correct_guess):
             clear()
             print()
-            print('     CONGRATULATIONS! YOU WON!      ')
+            print('              CONGRATULATIONS!') 
+            print(f.renderText('     YOU WON  !      '))
             print()
-            print(f'   {word} is the correct guess!')
+            print(f'             {word} is the correct guess!')
             return True
         else:
             return False
@@ -104,7 +108,7 @@ def game_loop(word):
 
 
 def main():
-    print('  Welcome to Hangman game! Guess the word:)')
+    print('Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
     game_loop(word)
