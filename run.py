@@ -53,7 +53,16 @@ def check_letter(word):
         else:
             show_hangman_values[chances]= hangman_values[chances]
             chances +=1
-            if letter in incorrect_guess:
+            if chances == 7:
+                print()
+                clear()
+                print()
+                print('GAME OVER!')
+                hangman.print_hangman(show_hangman_values)
+                print('\n')
+                print(f'The word was: {word}')
+                break
+            elif letter in incorrect_guess:
                 print('You have already used this letter. Try again!')
             else:    
                 print("Bad luck! Try again, this letter doesn't exist inside the word")
@@ -63,6 +72,7 @@ def main():
     print('Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
+    print('\n')
     print(word)
     check_letter(word)
    
