@@ -18,17 +18,17 @@ def pick_random_word(web2set):
     return word
 
 def print_the_word(correct_guess, word):
-    for letter in word:
-        if letter in correct_guess:
-            print(' {} '.format(letter),end='')
+    for i in word:
+        if i in correct_guess:
+            print(f' {i} ',end='')
         else:
             print(' _ ', end='')
     
 def letter_choice():
-    letter= input('Enter the letter here:')
+    letter= input('  Enter the letter here:')
     while len(letter) != 1 or not letter.isalpha():
-        print('Please enter only single letters')
-        letter= input('Enter the letter here:')
+        print('  Please enter only single letters')
+        letter= input('  Enter the letter here:')
     return (letter.upper())
 
 def game_over(word, chances):
@@ -36,7 +36,7 @@ def game_over(word, chances):
         clear()
         print()
         print('     GAME OVER!      ')
-        print(f'The word was: {word}')
+        print(f'  The word was: {word}  ')
         return True
     else:
         return False
@@ -47,12 +47,12 @@ def winner(word, correct_guess):
             print()
             print('     CONGRATULATIONS! YOU WON!      ')
             print()
-            print(f'{word} is the correct guess!')
+            print(f'   {word} is the correct guess!')
             return True
         else:
             return False
 
-def check_letter(word):
+def game_loop(word):
     chances= 0
     lives = 7
     correct_guess= []
@@ -63,18 +63,20 @@ def check_letter(word):
         print(word) #to be removed before submitting
         hangman.print_hangman(show_hangman_values)
         print_the_word(correct_guess, word)
-        print('\n')
-        print('incorrectly guessed letters: ', incorrect_guess)
-        print(f'You have {lives} lives left!')
+        print()
+        print('  Letters you guessed incorrectly: ', incorrect_guess)
+        print()
+        print(f'  You have {lives} lives left!')
+        print()
         letter=letter_choice()
         if letter in word:
             if letter in correct_guess:
                 clear()
-                print("You have already used this letter! Try again")
+                print("  You have already used this letter! Try again")
                 continue
             else:
                 clear()
-                print('Yeey! Great job!')
+                print('  Yeey! Great job!')
                 correct_guess += letter
                 if winner(word, correct_guess):
                     hangman.print_hangman_win(hangman_values)
@@ -83,7 +85,7 @@ def check_letter(word):
         else:
             if letter in incorrect_guess:
                 clear()
-                print('You have already used this letter. Try again!')
+                print('  You have already used this letter. Try again!')
                 continue
                 
             else:
@@ -95,17 +97,17 @@ def check_letter(word):
                     break
                 else:  
                     clear()
-                    print("Bad luck! Try again, this letter doesn't exist inside the word")
+                    print("  Bad luck! Try again, this letter doesn't exist inside the word")
                     incorrect_guess += letter
                     continue
         clear()
 
 
 def main():
-    print('Welcome to Hangman game! Guess the word:)')
+    print('  Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
-    check_letter(word)
+    game_loop(word)
 
 
 main()
