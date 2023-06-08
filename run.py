@@ -26,7 +26,7 @@ def print_the_word(correct_guess, word):
     
 def letter_choice():
     letter= input('Enter the letter here:')
-    if len(letter) != 1 or not letter.isalpha():
+    while len(letter) != 1 or not letter.isalpha():
         print('Please enter only single letters')
         letter= input('Enter the letter here:')
     return (letter.upper())
@@ -52,32 +52,34 @@ def check_letter(word):
             else:
                 print('Yeey! Great job!')
                 correct_guess += letter
-                continue
         else:
-            show_hangman_values[chances]= hangman_values[chances]
-            chances += 1 
-            lives -= 1
-            if chances == 7:
-                print()
-                clear()
-                print()
-                print('GAME OVER!')
-                hangman.print_hangman(show_hangman_values)
-                print('\n')
-                print(f'The word was: {word}')
-                break
-            elif letter in incorrect_guess:
+            if letter in incorrect_guess:
                 print('You have already used this letter. Try again!')
-                continue
-            else:  
-                print("Bad luck! Try again, this letter doesn't exist inside the word")
-                incorrect_guess += letter
+            else:
+                show_hangman_values[chances]= hangman_values[chances]
+                chances += 1
+                lives -= 1
+                if chances == 7:
+                    print()
+                    clear()
+                    print()
+                    print('GAME OVER!')
+                    hangman.print_hangman(show_hangman_values)
+                    print('\n')
+                    print(f'The word was: {word}')
+                    break
+                else:  
+                    print("Bad luck! Try again, this letter doesn't exist inside the word")
+                    incorrect_guess += letter
+
+
 
 def main():
     print('Welcome to Hangman game! Guess the word:)')
     word_list= list(web2set)
     word=pick_random_word(word_list)
     check_letter(word)
-   
+
+
 main()
 
