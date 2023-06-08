@@ -31,6 +31,27 @@ def letter_choice():
         letter= input('Enter the letter here:')
     return (letter.upper())
 
+def game_over(word, chances):
+    if chances == 7:
+        clear()
+        print()
+        print('     GAME OVER!      ')
+        print(f'The word was: {word}')
+        return True
+    else:
+        return False
+
+def winner(word, correct_guess):
+        if len(set(word)) == len(correct_guess):
+            clear()
+            print()
+            print('     CONGRATULATIONS! YOU WON!      ')
+            print()
+            print(f'{word} is the correct guess!')
+            return True
+        else:
+            return False
+
 def check_letter(word):
     chances= 0
     lives = 7
@@ -40,6 +61,7 @@ def check_letter(word):
     show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
     while True:
         clear()
+        print(word)
         hangman.print_hangman(show_hangman_values)
         print_the_word(correct_guess, word)
         print('\n')
@@ -52,6 +74,9 @@ def check_letter(word):
             else:
                 print('Yeey! Great job!')
                 correct_guess += letter
+                if winner(word, correct_guess):
+                    hangman.print_hangman_win(hangman_values)
+                    break
         else:
             if letter in incorrect_guess:
                 print('You have already used this letter. Try again!')
@@ -59,14 +84,8 @@ def check_letter(word):
                 show_hangman_values[chances]= hangman_values[chances]
                 chances += 1
                 lives -= 1
-                if chances == 7:
-                    print()
-                    clear()
-                    print()
-                    print('GAME OVER!')
+                if game_over(word,chances):
                     hangman.print_hangman(show_hangman_values)
-                    print('\n')
-                    print(f'The word was: {word}')
                     break
                 else:  
                     print("Bad luck! Try again, this letter doesn't exist inside the word")
