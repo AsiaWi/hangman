@@ -60,8 +60,7 @@ def check_letter(word):
     hangman_values = ['O','/','|','\\','|','/','\\']
     show_hangman_values = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
     while True:
-        clear()
-        print(word)
+        print(word) #to be removed before submitting
         hangman.print_hangman(show_hangman_values)
         print_the_word(correct_guess, word)
         print('\n')
@@ -70,16 +69,23 @@ def check_letter(word):
         letter=letter_choice()
         if letter in word:
             if letter in correct_guess:
+                clear()
                 print("You have already used this letter! Try again")
+                continue
             else:
+                clear()
                 print('Yeey! Great job!')
                 correct_guess += letter
                 if winner(word, correct_guess):
                     hangman.print_hangman_win(hangman_values)
                     break
+                continue
         else:
             if letter in incorrect_guess:
+                clear()
                 print('You have already used this letter. Try again!')
+                continue
+                
             else:
                 show_hangman_values[chances]= hangman_values[chances]
                 chances += 1
@@ -88,9 +94,11 @@ def check_letter(word):
                     hangman.print_hangman(show_hangman_values)
                     break
                 else:  
+                    clear()
                     print("Bad luck! Try again, this letter doesn't exist inside the word")
                     incorrect_guess += letter
-
+                    continue
+        clear()
 
 
 def main():
@@ -101,4 +109,5 @@ def main():
 
 
 main()
+#print(web2set)
 
