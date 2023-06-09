@@ -20,6 +20,26 @@ def pick_random_word(web2set):
         word = random.choice(web2set).upper()
     return word
 
+
+def users_level_choice():
+    while True:
+        game_level = input('Enter 1 for begginers or 2 for advanced level: ')
+        print()
+        try:
+            game_level = int(game_level)
+        except ValueError:
+            print('Numbers only')
+            continue
+        if  1 <= game_level <=2:
+            return game_level
+            break
+        else:
+            print('Please check your options, number outside the allowed range')
+    
+    clear()
+    
+
+
 def print_the_word(correct_guess, word):
     for i in word:
         if i in correct_guess:
@@ -67,7 +87,7 @@ def game_loop(word):
         print(word) #to be removed before submitting
         hangman.print_hangman(show_hangman_values)
         print_the_word(correct_guess, word)
-        print()
+        print('\n')
         print('  Letters you guessed incorrectly: ', incorrect_guess)
         print()
         print(f'  You have {lives} lives left!')
@@ -76,10 +96,12 @@ def game_loop(word):
         if letter in word:
             if letter in correct_guess:
                 clear()
+                print()
                 print("  You have already used this letter! Try again")
                 continue
             else:
                 clear()
+                print()
                 print('  Yeey! Great job!')
                 correct_guess += letter
                 if winner(word, correct_guess):
@@ -89,6 +111,7 @@ def game_loop(word):
         else:
             if letter in incorrect_guess:
                 clear()
+                print()
                 print('  You have already used this letter. Try again!')
                 continue
                 
@@ -98,9 +121,11 @@ def game_loop(word):
                 lives -= 1
                 if game_over(word,chances):
                     hangman.print_hangman(show_hangman_values)
+                    users_level_choice()
                     break
                 else:  
                     clear()
+                    print()
                     print("  Bad luck! Try again, this letter doesn't exist inside the word")
                     incorrect_guess += letter
                     continue
@@ -108,8 +133,12 @@ def game_loop(word):
 
 
 def main():
-    print('Welcome to Hangman game! Guess the word:)')
+    print()
+    print(f.renderText('. . Welcome to . .'))
+    print(f.renderText('Hangman game !'))
     word_list= list(web2set)
+    game_level=users_level_choice()
+    clear()
     word=pick_random_word(word_list)
     game_loop(word)
 
