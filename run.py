@@ -57,7 +57,7 @@ def letter_choice():
 def game_over(word, chances):
     if chances == 7:
         clear()
-        print(f.renderText('Game over :(      '))
+        print(f.renderText('  Game over :(      '))
         print(f'  The word was: {word}  ')
         return True
     else:
@@ -67,8 +67,8 @@ def winner(word, correct_guess):
         if len(set(word)) == len(correct_guess):
             clear()
             print()
-            print('           CONGRATULATIONS!') 
-            print(f.renderText(' you won ! '))
+            print('                          CONGRATULATIONS!') 
+            print(f.renderText('        you won ! '))
             print()
             print(f'             {word} is the correct guess!')
             return True
