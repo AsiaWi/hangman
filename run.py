@@ -58,7 +58,7 @@ def game_over(word, chances):
     if chances == 7:
         clear()
         print()
-        print(f.renderText('  G a m e  o v e r :(      '))
+        print(f.renderText(' G a m e  o v e r       '))
         print(f'  The word was: {word}  ')
         return True
     else:
