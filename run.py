@@ -57,7 +57,7 @@ def letter_choice():
 def game_over(word, chances):
     if chances == 7:
         clear()
-        print(f.renderText('G A M E  O V E R : (      '))
+        print(f.renderText('Game over :(      '))
         print(f'  The word was: {word}  ')
         return True
     else:
@@ -68,7 +68,7 @@ def winner(word, correct_guess):
             clear()
             print()
             print('           CONGRATULATIONS!') 
-            print(f.renderText(' YOU WON ! '))
+            print(f.renderText(' you won ! '))
             print()
             print(f'             {word} is the correct guess!')
             return True
@@ -134,7 +134,7 @@ def game_loop(word):
 def main():
     print()
     print(f.renderText('. . Welcome to . .'))
-    print(f.renderText('H a n g m a n !'))
+    print(f.renderText(' H a n g m a n !'))
     word_list= list(web2set)
     game_level=users_level_choice()
     clear()
