@@ -55,19 +55,26 @@ def letter_choice():
     return (letter.upper())
 
 def start_again():
-    new_game = input('Press 1 if you want to start again!: ')
-    while new_game != 1:
-        print(' Incorrect input, try again')
-        letter= input('Press 1 if you want to start again!: ')
-        return main()
+    while True:
+        new_game = input('Press 1 if you want to start again!: ')
+        try:
+            new_game = int(new_game)
+        except ValueError:
+            print('Incorrect input, try again')
+            continue
+        if new_game == 1:
+            main()
+            break
+        else:
+            print('Invalid number')
+        
 
 def game_over(word, chances):
     if chances == 7:
         clear()
         print()
         print(f.renderText(' game  over '))
-        print(f'  The word was: {word}  ')
-        start_again()
+        print(f'                 The word was: {word}  ')
         return True
     else:
         return False
@@ -78,8 +85,7 @@ def winner(word, correct_guess):
             print()
             print('                                 CONGRATULATIONS!') 
             print(f.renderText('       you won ! '))
-            print()
-            print(f'             {word} is the correct guess!')
+            print(f'                         {word} is the correct guess!')
             return True
         else:
             return False
@@ -114,6 +120,7 @@ def game_loop(word):
                 correct_guess += letter
                 if winner(word, correct_guess):
                     hangman.print_hangman_win(hangman_values)
+                    start_again()
                     break
                 continue
         else:
@@ -129,6 +136,7 @@ def game_loop(word):
                 lives -= 1
                 if game_over(word,chances):
                     hangman.print_hangman(show_hangman_values)
+                    start_again()
                     break
                 else:  
                     clear()
