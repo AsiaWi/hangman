@@ -1,4 +1,4 @@
-# I have used the following list to help me with the game:
+# I have used the following links to help me with the game:
 # https://www.askpython.com/python/examples/hangman-game-in-python
 # https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true
 
@@ -167,7 +167,7 @@ def game_loop(word):
     Inside game loop runs the whole game
     Starts after a word for appropriate level chosen by user has been selected.
     Updates chances needed for game over function.
-    Stores correct and incorrect guesses.
+    Stores correct and incorrect guessed letters in a relevant list.
     Displays and updates hangman feature with each incorrect guess.
     Checks if guessed letter is in the word, correct_guess
     or incorrect_guess list-
