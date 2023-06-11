@@ -1,3 +1,5 @@
+# This code has been taken from:
+# https://www.askpython.com/python/examples/hangman-game-in-python
 
 def print_hangman(values):
     print()
@@ -12,10 +14,11 @@ def print_hangman(values):
     print("  `````````````````````")
     print()
     
-def print_hangman_win(values):
+def print_hangman_win():
     print()
     print("\t +--------+")
     print("\t         | |")
+ 
     print("\t         | |")
     print("\t O       | |")
     print("\t/|\\      | |")
