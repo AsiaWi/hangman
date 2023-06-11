@@ -14,10 +14,15 @@ f = Figlet(font='slant')
 def clear():
     os.system("clear")
 
-def pick_random_word(web2set):
+def pick_random_word(web2set, game_level):
     word = random.choice(web2set).upper()
-    while len(word) < 7:
-        word = random.choice(web2set).upper()
+    if game_level == 1:
+        while len(word) != 7:
+            word = random.choice(web2set).upper()
+    else:
+        while len(word) < 7 or len(word) == 7:
+            word = random.choice(web2set).upper()
+    
     return word
 
 
@@ -155,7 +160,7 @@ def main():
     word_list= list(web2set)
     game_level=users_level_choice()
     clear()
-    word=pick_random_word(word_list)
+    word=pick_random_word(word_list, game_level)
     game_loop(word)
 
 
