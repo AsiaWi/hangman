@@ -54,12 +54,20 @@ def letter_choice():
         letter= input('  Enter the letter here:')
     return (letter.upper())
 
+def start_again():
+    new_game = input('Press 1 if you want to start again!: ')
+    while new_game != 1:
+        print(' Incorrect input, try again')
+        letter= input('Press 1 if you want to start again!: ')
+        return main()
+
 def game_over(word, chances):
     if chances == 7:
         clear()
         print()
-        print(f.renderText(' G a m e  o v e r       '))
+        print(f.renderText(' game  over '))
         print(f'  The word was: {word}  ')
+        start_again()
         return True
     else:
         return False
@@ -121,7 +129,6 @@ def game_loop(word):
                 lives -= 1
                 if game_over(word,chances):
                     hangman.print_hangman(show_hangman_values)
-                    users_level_choice()
                     break
                 else:  
                     clear()
@@ -133,6 +140,7 @@ def game_loop(word):
 
 
 def main():
+    clear()
     print()
     print(f.renderText('. . Welcome to . .'))
     print(f.renderText(' H a n g m a n !'))
