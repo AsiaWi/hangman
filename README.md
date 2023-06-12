@@ -20,4 +20,15 @@ The game page features:
 The aim of this feature is to let user know why the letters don't or do update within the game.
 
 ![user_message](assets/docs/user_message.png)
+#### HANGMAN DISPLAY
+* This feature will start of with no hangman shown. As user inputs letters, this will update with one body part every time guessed letter doesn't exist inside the word.
+* The full body frame consists of 7 body parts which matches the number of lifes in the game to logically connect the progress and the displayed feature.
+* The aim of this feature is to graphically show the progress to the user.
+  
+![hangman_display](assets/docs/hangman_display.png)
+#### WORD DISPLAY
+* This feature will start of with every letter being replaced with underscore '_', each underscore will be replaced with a letter is user guesses it correctly.
+ The aim of this feature is to allow the user to play the game and guess the word before fully uncovered.
+
+![word_display](assets/docs/word_display.png)
 
