@@ -51,4 +51,15 @@ The aim of this feature is to let user know why the letters don't or do update w
 
 ![game_over](assets/docs/game_over.png)
 
-The game page features:
+The game over page features:
+#### WORD DISPLAYED
+* This feature will show the word which the user didn't guess
+  The aim of this is to update the user with what they played against.
+
+![word_display](assets/docs/word_display.png)
+
+#### GAME OVER HANGMAN DISPLAY
+* This will show the fully build hanging hangman
+  The aim of this is to picture the game loss.
+
+![game_over_hangman](assets/docs/game_over_hangman.png)
