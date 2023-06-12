@@ -60,6 +60,12 @@ The game over page features:
 
 #### GAME OVER HANGMAN DISPLAY
 * This will show the fully build hanging hangman
-  The aim of this is to picture the game loss.
+* The aim of this is to picture the game loss.
 
 ![game_over_hangman](assets/docs/game_over_hangman.png)
+#### START AGAIN
+* An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.
+  User will see an error if anything other than number 1 gets used.
+* The aim of this is to allow the user to easily get back to beggining if they want to play again
+
+![start_again](assets/docs/start_again.png)
