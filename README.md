@@ -33,12 +33,22 @@ The aim of this feature is to let user know why the letters don't or do update w
 ![word_display](assets/docs/word_display.png)
 #### INCORRECT LETTERS LIST
 * This feature will store any incorrectly guessed letters by the user.
- The aim of this is for the user to not have to remember the already used incorrect guesses  and as game progresses possibly to guess the word easier
+* The aim of this is for the user to not have to remember the already used incorrect guesses  and as game progresses possibly to guess the word easier
 
 ![incorrect_guess](assets/docs/incorrect_guess.png)
 
 #### REMAINING LIVES COUNT
 * This feature starts of with 7 lives and goes down by 1 every time a letter which doesn't exist inside the word gets used. 
-  The aim of this is to show how many tries the user has left before they loose.
+* The aim of this is to show how many tries the user has left before they loose.
 
 ![lives_display](assets/docs/lives_display.png)
+#### GUESS THE LETTER INPUT
+* This is the feature where user inputs their guesses. The input will only accept single letters, no numbers or special characters. An error will show if unwanted input gets used.
+
+![letter_input](assets/docs/letter_input.png)
+### GAME OVER PAGE
+* This will show when user uses all their chances.
+
+![game_over](assets/docs/game_over.png)
+
+The game page features:
