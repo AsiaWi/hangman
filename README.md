@@ -93,3 +93,25 @@ The you won page features:
   The aim of this is to allow the user to easily get back to beggining if they want to play again
 
 ![start_again](assets/docs/start_again.png)
+## DATA MODEL
+### FLOWCHARTS
+I have used https://www.lucidchart.com/pages/ to create a flow chart and help me with creating and coding the logic of the app.
+
+![flowchart_hangman](assets/docs/flowchart_hangman.png)
+
+### IMPORTS
+* I have used Python and external packages which have been imported:
+  * os: used to clear the terminal with clear() function
+  * random: used to randomly select questions from word list
+  * Figlet: used for additional font for welcome and game over page
+  * get_english_words_set: list of words needed for the game
+  ## TESTING
+
+** ** **  Please note this game will not work on mobiles as it runs on the mock terminal. (cred. Mock terminal created by Code Institute). No accessibilty or responsivity testing was therefore needed. ** ** **
+
+* Python code tested and no significant errors shown. Code passed through:
+
+https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/
+
+![code_validate](assets/docs/code_validate.png)
+* Manually tested within the local and mock terminal all inputs in the game to make sure correct errors show to user and game doesn't break when unwanted input get's used
