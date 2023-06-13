@@ -6,18 +6,20 @@ import random
 import hangman
 import os
 import keyboard
+from colorama import Fore, Back, Style
 from pyfiglet import Figlet
 from english_words import get_english_words_set
 
 f = Figlet(font='slant')
 web2set = get_english_words_set(['web2'])
 
+
 def non_alpha_list():
     '''
     Remove any words including non alpha characters
     from the imported word list
     '''
-    
+
     web2set = get_english_words_set(['web2'])
     non_alpha_words = [x for x in web2set if not x.isalpha()]
 
@@ -26,6 +28,7 @@ def non_alpha_list():
 
     return list(web2set)
 
+
 def clear():
     '''
     Clears terminal
@@ -33,27 +36,30 @@ def clear():
 
     os.system("clear")
 
+
 def instructions():
     '''
     Provides user an option to either read instructions first
-    and then jump to selecting game level or 
-    if user doesn't need instructions they can skip it and 
-    jump to selecting game level 
+    and then jump to selecting game level or
+    if user doesn't need instructions they can skip it and
+    jump to selecting game level
     '''
 
     print()
-    print('You can view instructions or jump right into it!')
-    instructions = input('Do you want to see instructions? y/n: ')
+    print('                You can view instructions or jump right into it!')
+    print()
+    instructions = input('      Do you want to see instructions? y/n: ')
 
     while instructions != 'y' and instructions != 'n':
         clear()
-        print('incorrect entry, try again')
+        print(Fore.RED + 'incorrect entry, try again')
+        print(Style.RESET_ALL)
         instructions = input('Do you want to see instructions? y/n: ')
     else:
         if instructions == 'y':
             clear()
             print('                        Guess the hidden word!')
-            print('         The aim of the game is to guess the blanked out word')
+            print('               The aim of the game is to guess the word')
             print('            and have as few incorrect guesses as possible')
             print('                 to save the man and not let him hang')
             print('                          You have 7 lives!')
@@ -65,8 +71,7 @@ def instructions():
             print('                             Good luck! :)')
             print()
             back = input('                       Press any key to proceed: ')
-             
-        
+
 
 def users_level_choice():
     '''
@@ -79,18 +84,20 @@ def users_level_choice():
 
     while True:
         print()
-        game_level = input('            Enter 1 for beginners or 2 for advanced level: ')
+        game_level = input(' Enter 1 for beginners or 2 for advanced level: ')
 
         try:
             game_level = int(game_level)
         except ValueError:
-            print('Numbers only')
+            print(Fore.RED + 'Numbers only')
+            print(Style.RESET_ALL)
             continue
         if 1 <= game_level <= 2:
             return game_level
             break
         else:
-            print('Number outside the allowed range')
+            print(Fore.RED + 'Number outside the allowed range')
+            print(Style.RESET_ALL)
 
     clear()
 
@@ -124,7 +131,7 @@ def print_the_word(correct_guess, word):
 
     for alpha in word:
         if alpha in correct_guess:
-            print(f' {alpha} ', end='')
+            print(f' {Fore.YELLOW}{alpha}{Style.RESET_ALL} ', end='')
         else:
             print(' _ ', end='')
 
@@ -138,7 +145,8 @@ def letter_choice():
 
     letter = input('  Enter the letter here:')
     while len(letter) != 1 or not letter.isalpha():
-        print('  Please enter only single letters')
+        print(Fore.RED + '  Please enter only single letters')
+        print(Style.RESET_ALL)
         letter = input('  Enter the letter here:')
     return (letter.upper())
 
@@ -160,13 +168,15 @@ def start_again():
         try:
             new_game = int(new_game)
         except ValueError:
-            print('Incorrect input, try again')
+            print(Fore.RED + 'Incorrect input, try again')
+            print(Style.RESET_ALL)
             continue
         if new_game == 1:
             main()
             break
         else:
-            print('Invalid number')
+            print(Fore.RED + 'Invalid number')
+            print(Style.RESET_ALL)
 
 
 def game_over(word, chances):
@@ -182,7 +192,7 @@ def game_over(word, chances):
         clear()
         print()
         print(f.renderText(' game over '))
-        print(f'                 The word was: {word}  ')
+        print(f'        The word was: {Fore.YELLOW}{word}{Style.RESET_ALL}  ')
         return True
     else:
         return False
@@ -203,7 +213,7 @@ def winner(word, correct_guess):
         print()
         print('                                 CONGRATULATIONS!')
         print(f.renderText('       you won ! '))
-        print(f'                         {word} is the correct guess')
+        print(f'     {Fore.GREEN}{word}{Style.RESET_ALL} is the correct guess')
         return True
     else:
         return False
@@ -234,9 +244,10 @@ def game_loop(word):
         hangman.print_hangman(update_display_hangman)
         print_the_word(correct_guess, word)
         print('\n')
-        print('  Letters you guessed incorrectly: ', incorrect_guess)
+        print('  Letters you guessed incorrectly: ')
+        print(Fore.YELLOW, incorrect_guess,  Style.RESET_ALL)
         print()
-        print(f'  You have {lives} lives left!')
+        print(f'  You have {Fore.YELLOW}{lives}{Style.RESET_ALL} lives left!')
         print()
         letter = letter_choice()
 
@@ -244,12 +255,14 @@ def game_loop(word):
             if letter in correct_guess:
                 clear()
                 print()
-                print("  You have already used this letter! Try again")
+                print(Fore.RED + "You have already used this letter!Try again")
+                print(Style.RESET_ALL)
                 continue
             else:
                 clear()
                 print()
-                print('  Yeey! Great job!')
+                print(Fore.GREEN + '  Yeey! Great job!')
+                print(Style.RESET_ALL)
                 correct_guess += letter
                 if winner(word, correct_guess):
                     hangman.print_hangman_win()
@@ -260,7 +273,8 @@ def game_loop(word):
             if letter in incorrect_guess:
                 clear()
                 print()
-                print('  You have already used this letter. Try again!')
+                print(Fore.RED + 'You have already used this letter!Try again')
+                print(Style.RESET_ALL)
                 continue
 
             else:
@@ -274,7 +288,8 @@ def game_loop(word):
                 else:
                     clear()
                     print()
-                    print("  Bad luck! Letter isn't part of the word")
+                    print(Fore.RED + "Bad luck! Letter isn't part of the word")
+                    print(Style.RESET_ALL)
                     incorrect_guess += letter
                     continue
         clear()
@@ -288,7 +303,8 @@ def main():
     clear()
     print()
     print(f.renderText('. . Welcome to . .'))
-    print(f.renderText(' H a n g m a n !'))
+    print(Fore.CYAN + f.renderText(' H a n g m a n !'))
+    print(Style.RESET_ALL)
     word_list = non_alpha_list()
     instructions()
     game_level = users_level_choice()
@@ -297,5 +313,4 @@ def main():
     game_loop(word)
 
 
-#main()
-non_alpha_list()
+main()
