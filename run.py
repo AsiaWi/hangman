@@ -86,7 +86,7 @@ def users_level_choice():
     while True:
         print()
         game_level = input(' Enter 1 for beginners or 2 for advanced level: ')
-
+        
         try:
             game_level = int(game_level)
         except ValueError:
@@ -119,7 +119,7 @@ def pick_random_word(web2set, game_level):
     else:
         while len(word) < 7 or len(word) == 7:
             word = random.choice(web2set).upper()
-
+    clear()
     return word
 
 
