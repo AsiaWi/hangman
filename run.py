@@ -5,6 +5,7 @@
 import random
 import hangman
 import os
+import keyboard
 
 from pyfiglet import Figlet
 f = Figlet(font='slant')
@@ -20,6 +21,44 @@ def clear():
 
     os.system("clear")
 
+def instructions():
+    '''
+    Provides user an option to either read instructions first
+    and then jump to selecting game level or 
+    if user doesn't need instructions they can skip it and 
+    jump to selecting game level 
+    '''
+
+    print()
+    print('You can view instructions or jump right into it!')
+    instructions = input('Do you want to see instructions? y/n: ')
+
+    while instructions != 'y' and instructions != 'n':
+        clear()
+        print('incorrect entry, try again')
+        instructions = input('Do you want to see instructions? y/n: ')
+    else:
+        if instructions == 'y':
+            clear()
+            print('                        Guess the hidden word!')
+            print('         The aim of the game is to guess the blanked out word')
+            print('            and have as few incorrect guesses as possible')
+            print('                 to save the man and not let him hang')
+            print('                          You have 7 lives!')
+            print()
+            print('                              LEVELS:')
+            print('              "b e g g i n e r s" level with short words')
+            print('               "a d v a n c e d" level with long words')
+            print()
+            print('                             Good luck! :)')
+            print()
+            back = input('             Press ENTER to select level and START: ')
+            while back != 'S':
+                clear()
+                print('incorrect input')
+                back = input('Press ENTER to select level and START: ')
+             
+        
 
 def users_level_choice():
     '''
@@ -31,8 +70,8 @@ def users_level_choice():
     '''
 
     while True:
-        game_level = input('Enter 1 for beginners or 2 for advanced level: ')
         print()
+        game_level = input('Enter 1 for beginners or 2 for advanced level: ')
 
         try:
             game_level = int(game_level)
@@ -238,12 +277,12 @@ def main():
     Run the program
     outside game loop
     '''
-
     clear()
     print()
     print(f.renderText('. . Welcome to . .'))
     print(f.renderText(' H a n g m a n !'))
     word_list = list(web2set)
+    instructions()
     game_level = users_level_choice()
     clear()
     word = pick_random_word(word_list, game_level)
