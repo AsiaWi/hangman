@@ -6,13 +6,25 @@ import random
 import hangman
 import os
 import keyboard
-
 from pyfiglet import Figlet
-f = Figlet(font='slant')
-
 from english_words import get_english_words_set
+
+f = Figlet(font='slant')
 web2set = get_english_words_set(['web2'])
 
+def non_alpha_list():
+    '''
+    Remove any words including non alpha characters
+    from the imported word list
+    '''
+    
+    web2set = get_english_words_set(['web2'])
+    non_alpha_words = [x for x in web2set if not x.isalpha()]
+
+    for i in non_alpha_words:
+        web2set.remove(i)
+
+    return list(web2set)
 
 def clear():
     '''
@@ -277,7 +289,7 @@ def main():
     print()
     print(f.renderText('. . Welcome to . .'))
     print(f.renderText(' H a n g m a n !'))
-    word_list = list(web2set)
+    word_list = non_alpha_list()
     instructions()
     game_level = users_level_choice()
     clear()
@@ -285,4 +297,5 @@ def main():
     game_loop(word)
 
 
-main()
+#main()
+non_alpha_list()
