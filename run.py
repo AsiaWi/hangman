@@ -57,6 +57,8 @@ def instructions():
     else:
         if instructions == 'y':
             clear()
+            print()
+            print()
             print('                        Guess the hidden word!')
             print('               The aim of the game is to guess the word')
             print('            and have as few incorrect guesses as possible')
@@ -147,6 +149,7 @@ def letter_choice():
         print(Fore.RED + '  Please enter only single letters')
         print(Style.RESET_ALL)
         letter = input('  Enter the letter here:')
+        
     return (letter.upper())
 
 
@@ -190,7 +193,7 @@ def game_over(word, chances):
     if chances == 7:
         clear()
         print()
-        print(f.renderText(' game over :( '))
+        print(f.renderText(' game over : ( '))
         print(f'        The word was: {Fore.YELLOW}{word}{Style.RESET_ALL}  ')
         return True
     else:
@@ -211,7 +214,7 @@ def winner(word, correct_guess):
         clear()
         print()
         print('                                 CONGRATULATIONS!')
-        print(f.renderText('       you won :) '))
+        print(f.renderText('       you won : ) '))
         print(f'     {Fore.GREEN}{word}{Style.RESET_ALL} is the correct guess')
         return True
     else:
@@ -249,6 +252,7 @@ def game_loop(word):
         print(f'  You have {Fore.YELLOW}{lives}{Style.RESET_ALL} lives left!')
         print()
         letter = letter_choice()
+        clear()
 
         if letter in word:
             if letter in correct_guess:
