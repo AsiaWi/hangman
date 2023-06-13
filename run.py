@@ -52,11 +52,7 @@ def instructions():
             print()
             print('                             Good luck! :)')
             print()
-            back = input('             Press ENTER to select level and START: ')
-            while back != 'S':
-                clear()
-                print('incorrect input')
-                back = input('Press ENTER to select level and START: ')
+            back = input('                       Press any key to proceed: ')
              
         
 
@@ -71,7 +67,7 @@ def users_level_choice():
 
     while True:
         print()
-        game_level = input('Enter 1 for beginners or 2 for advanced level: ')
+        game_level = input('            Enter 1 for beginners or 2 for advanced level: ')
 
         try:
             game_level = int(game_level)
