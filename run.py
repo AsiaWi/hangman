@@ -5,7 +5,6 @@
 import random
 import hangman
 import os
-import keyboard
 from colorama import Fore, Back, Style
 from pyfiglet import Figlet
 from english_words import get_english_words_set
@@ -191,7 +190,7 @@ def game_over(word, chances):
     if chances == 7:
         clear()
         print()
-        print(f.renderText(' game over '))
+        print(f.renderText(' game over :( '))
         print(f'        The word was: {Fore.YELLOW}{word}{Style.RESET_ALL}  ')
         return True
     else:
@@ -212,7 +211,7 @@ def winner(word, correct_guess):
         clear()
         print()
         print('                                 CONGRATULATIONS!')
-        print(f.renderText('       you won ! '))
+        print(f.renderText('       you won :) '))
         print(f'     {Fore.GREEN}{word}{Style.RESET_ALL} is the correct guess')
         return True
     else:
