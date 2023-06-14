@@ -270,6 +270,7 @@ def game_loop(word):
                 if winner(word, correct_guess):
                     hangman.print_hangman_win()
                     start_again()
+                    clear()
                     break
                 continue
         else:
@@ -287,6 +288,7 @@ def game_loop(word):
                 if game_over(word, chances):
                     hangman.print_hangman(update_display_hangman)
                     start_again()
+                    clear()
                     break
                 else:
                     clear()
