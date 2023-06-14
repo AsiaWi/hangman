@@ -72,6 +72,7 @@ def instructions():
             print('                             Good luck! :)')
             print()
             back = input('                       Press any key to proceed: ')
+            clear()
 
 
 def users_level_choice():
@@ -82,11 +83,10 @@ def users_level_choice():
     will raise an error if input is not a number
     and if number entered is not 1 or 2
     '''
-
     while True:
         print()
         game_level = input(' Enter 1 for beginners or 2 for advanced level: ')
-        
+
         try:
             game_level = int(game_level)
         except ValueError:
@@ -149,7 +149,7 @@ def letter_choice():
         print(Fore.RED + '  Please enter only single letters')
         print(Style.RESET_ALL)
         letter = input('  Enter the letter here:')
-        
+
     return (letter.upper())
 
 
