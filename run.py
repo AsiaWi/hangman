@@ -18,7 +18,6 @@ def non_alpha_list():
     Remove any words including non alpha characters
     from the imported word list
     '''
-
     web2set = get_english_words_set(['web2'])
     non_alpha_words = [x for x in web2set if not x.isalpha()]
 
@@ -32,7 +31,6 @@ def clear():
     '''
     Clears terminal
     '''
-
     os.system("clear")
 
 
@@ -43,7 +41,6 @@ def instructions():
     if user doesn't need instructions they can skip it and
     jump to selecting game level
     '''
-
     print()
     print('                You can view instructions or jump right into it!')
     print()
@@ -71,7 +68,7 @@ def instructions():
             print()
             print('                             Good luck! :)')
             print()
-            back = input('                       Press any key to proceed: ')
+            back = input('                       Press ENTER to proceed: ')
             clear()
 
 
@@ -110,7 +107,6 @@ def pick_random_word(web2set, game_level):
     and word length of more than 7 for advanced level
     words < 7 not in the game
     '''
-
     word = random.choice(web2set).upper()
 
     if game_level == 1:
@@ -129,7 +125,6 @@ def print_the_word(correct_guess, word):
     underscore will be displayed for each letter
     unless letter already guessed by user
     '''
-
     for alpha in word:
         if alpha in correct_guess:
             print(f' {Fore.YELLOW}{alpha}{Style.RESET_ALL} ', end='')
@@ -143,7 +138,6 @@ def letter_choice():
     if input not a letter or longer than 1
     a user will see an error and input option again
     '''
-
     letter = input('  Enter the letter here:')
     while len(letter) != 1 or not letter.isalpha():
         print(Fore.RED + '  Please enter only single letters')
@@ -162,7 +156,6 @@ def start_again():
     will only accept 1 and then break the loop and
     take user back to main function to run program again
     '''
-
     while True:
 
         new_game = input('Press 1, if you want to start again!: ')
@@ -189,7 +182,6 @@ def game_over(word, chances):
     If not, the function returns false and the
     game_loop continues
     '''
-
     if chances == 7:
         clear()
         print()
@@ -209,7 +201,6 @@ def winner(word, correct_guess):
     If not, the function returns false and the
     game_loop continues
     '''
-
     if len(set(word)) == len(correct_guess):
         clear()
         print()
@@ -233,7 +224,6 @@ def game_loop(word):
     then displays relevant message.
     Displays and updates remaining lives.
     '''
-
     chances = 0
     lives = 7
     correct_guess = []
@@ -242,7 +232,6 @@ def game_loop(word):
     update_display_hangman = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
     while True:
-        print(word)  # to be removed before submitting
         hangman.print_hangman(update_display_hangman)
         print_the_word(correct_guess, word)
         print('\n')
@@ -280,7 +269,6 @@ def game_loop(word):
                 print(Fore.RED + 'You have already used this letter!Try again')
                 print(Style.RESET_ALL)
                 continue
-
             else:
                 update_display_hangman[chances] = hangman_values[chances]
                 chances += 1
