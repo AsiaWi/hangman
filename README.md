@@ -1,6 +1,7 @@
 # Hangman
 [**click here to see live page**](https://word-hangman.herokuapp.com)
-<br>
+
+
 Hangman is a game with the aim of guessing blanked out word. User gets 7 lives which matches the number of 'body parts' of the hangman. Every time user guesses a letter incorrectly, another body part of the hangman will show. The aim of the game is to guess the word before 7 lives get used and the mans whole body frame shows. The game is aimed at anyone who speaks english, or wants to improve their language skills.
 
 ![game_gif](assets/docs/ezgif_game_gif.gif)
@@ -21,7 +22,7 @@ The main page features:
 #### INSTRUCTIONS DISPLAYED
 * This is simple and short game instructions. Explanation of levels has also been added. The aim of this feature is to help understand the game for anyone who possibly never seen it before.
 
-Note that an option to press ENTER has been given to continue to next step (level option input described below), the aim of selecting 'enter' over a specific letter etc. is again for better UX. 
+Note that an option to press ENTER has been given to continue to next step (level option input described below), the aim of selecting 'enter' over a specific button is again for better UX as it's easier.
 
 ![instructions_displayed](assets/docs/instructions_choice.png)
 
@@ -104,7 +105,7 @@ The aim of this is to update the user with what they played against, also user c
 
 ![game_over_hangman](assets/docs/game_over_hangman.png)
 
-#### START AGAIAN INPUT
+#### START AGAIN INPUT
 * An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.
 User will see an error if anything other than number 1 gets used.
 
@@ -120,7 +121,7 @@ The you won page features:
 #### CELEBRATORY HEADING
 * Celebratory heading. 
 
-The aim of this is to make it clear what happend in the game and to connect the celebratory feeling. 
+The aim of this is to make it clear what happend in the game and to connect to the celebratory feeling. 
 
 ![you_won](assets/docs/you_won.png)
 
@@ -153,7 +154,7 @@ The aim of this is to allow the user to easily get back to beggining if they wan
 ## DATA MODEL
 
 ### FLOWCHARTS
-I have used https://www.lucidchart.com/pages/ to create a flow chart and help me with creating and coding the logic of the app.
+I have used [LUCIDCHART] (https://www.lucidchart.com/pages/) to create a flow chart and help me with creating and coding the logic of the app.
 
 ![flowchart_hangman](assets/docs/flowchart_hangman.png)
 
@@ -172,7 +173,7 @@ I have used https://www.lucidchart.com/pages/ to create a flow chart and help me
 ### VALIDATOR TESTING 
 * Python code tested and no significant errors shown. Code passed through:
 
-https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/
+[CI PYTHON LINTER] (https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/)
 
   validated run.py file: 
 ![code_validate_run](assets/docs/run.py_validate.png)
@@ -180,7 +181,7 @@ validated hangman.py file:
 ![code_validate_hangman](assets/docs/hangman.py_validate.png)
 
 
-* Manually tested within the local and mock terminal all inputs in the game to make sure correct errors show to user and game doesn't break when unwanted input get's used
+
 
 ### FUNCTIONAL TESTING
 
@@ -195,12 +196,11 @@ validated hangman.py file:
     repository ready to be pushed
   * git push - final command used to push commited code to remote repo on Github
 * Heroku - to deploy the app 
-* Screen Record extension to create video of the game for README file
+* [Screen Record] extension to create video of the game for README file
+   (https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden)
 
-   https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden
-* Ezgif - to convert video into gif for README file
-
-    https://ezgif.com/video-to-gif
+* [Ezgif] - to convert video into gif for README file
+   (https://ezgif.com/video-to-gif)
 
 ## DEPLOYMENT
 The app has been displayed thanks to template provided by Code Institue to allow others to test the code.
@@ -237,11 +237,11 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo
 When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
 
 ## CREDITS
-* Code Institute for template provided - https://github.com/Code-Institute-Org/p3-template
+* [Code Institute for template provided] (https://github.com/Code-Institute-Org/p3-template)
 * Both links used to code the game :
-   * https://www.askpython.com/python/examples/hangman-game-in-python
-   * https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true
-* Used to convert video of the game to a gif for README file - https://ezgif.com/video-to-gif
-* Used to create the video of the game needed to create gif for README - https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden 
-* Used for help with README file - https://github.com/Jonathan97-web/Mad-King/blob/main/README.md#tools--technologies-used 
+   * [HANGMAN FEATURE AND BODY OF THE GAME] (https://www.askpython.com/python/examples/hangman-game-in-python)
+   * [BODY OF THE GAME] (https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true)
+* Used to convert video of the game to a gif for README file - [EZGIF] (https://ezgif.com/video-to-gif)
+* Used to create the video of the game needed to create gif for README - [SCREEN RECORDER] (https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden)
+* Used for help with README file - [MAD- KING, JOHNATHAN'S PROJECT] (https://github.com/Jonathan97-web/Mad-King/blob/main/README.md#tools--technologies-used) 
 
