@@ -154,7 +154,7 @@ The aim of this is to allow the user to easily get back to beggining if they wan
 ## DATA MODEL
 
 ### FLOWCHARTS
-I have used [LUCIDCHART] (https://www.lucidchart.com/pages/) to create a flow chart and help me with creating and coding the logic of the app.
+I have used [**LUCIDCHART**] (https://www.lucidchart.com/pages/) to create a flow chart and help me with creating and coding the logic of the app.
 
 ![flowchart_hangman](assets/docs/flowchart_hangman.png)
 
@@ -173,7 +173,7 @@ I have used [LUCIDCHART] (https://www.lucidchart.com/pages/) to create a flow ch
 ### VALIDATOR TESTING 
 * Python code tested and no significant errors shown. Code passed through:
 
-[CI PYTHON LINTER] (https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/)
+[**CI PYTHON LINTER**] (https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/)
 
   validated run.py file: 
 ![code_validate_run](assets/docs/run.py_validate.png)
@@ -196,10 +196,9 @@ validated hangman.py file:
     repository ready to be pushed
   * git push - final command used to push commited code to remote repo on Github
 * Heroku - to deploy the app 
-* [Screen Record] extension to create video of the game for README file
+* [**Screen Record**] extension to create video of the game for README file
    (https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden)
-
-* [Ezgif] - to convert video into gif for README file
+* [**Ezgif**] - to convert video into gif for README file
    (https://ezgif.com/video-to-gif)
 
 ## DEPLOYMENT
@@ -237,11 +236,11 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo
 When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
 
 ## CREDITS
-* [Code Institute for template provided] (https://github.com/Code-Institute-Org/p3-template)
+* [**Code Institute for template provided**] (https://github.com/Code-Institute-Org/p3-template)
 * Both links used to code the game :
-   * [HANGMAN FEATURE AND BODY OF THE GAME] (https://www.askpython.com/python/examples/hangman-game-in-python)
-   * [BODY OF THE GAME] (https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true)
-* Used to convert video of the game to a gif for README file - [EZGIF] (https://ezgif.com/video-to-gif)
-* Used to create the video of the game needed to create gif for README - [SCREEN RECORDER] (https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden)
-* Used for help with README file - [MAD- KING, JOHNATHAN'S PROJECT] (https://github.com/Jonathan97-web/Mad-King/blob/main/README.md#tools--technologies-used) 
+   * [**HANGMAN FEATURE AND BODY OF THE GAME**] (https://www.askpython.com/python/examples/hangman-game-in-python)
+   * [**BODY OF THE GAME**] (https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true)
+* Used to convert video of the game to a gif for README file - [**EZGIF**] (https://ezgif.com/video-to-gif)
+* Used to create the video of the game needed to create gif for README - [**SCREEN RECORDER**] (https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden)
+* Used for help with README file - [**MAD- KING, JOHNATHAN'S PROJECT**] (https://github.com/Jonathan97-web/Mad-King/blob/main/README.md#tools--technologies-used) 
 
