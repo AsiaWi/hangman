@@ -146,6 +146,10 @@ The aim of this is to allow the user to easily get back to beggining if they wan
 
 ![start_again](assets/docs/start_again.png)
 
+### FUTURE FEATURES
+* Add different word lists for users to be able to choose a theme they would like to play.( Animals, music geography etc)
+* Add an option where user can select if they want some of the letters to be shown in the world from the beggining to make the guessing even easier.
+
 ## DATA MODEL
 
 ### FLOWCHARTS
@@ -233,5 +237,11 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo
 When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
 
 ## CREDITS
--CODE INST TEMPLATE LINK
+* Code Institute for template provided - https://github.com/Code-Institute-Org/p3-template
+* Both links used to code the game :
+   * https://www.askpython.com/python/examples/hangman-game-in-python
+   * https://codefather.tech/blog/hangman-game-python/?utm_content=cmp-true
+* Used to convert video of the game to a gif for README file - https://ezgif.com/video-to-gif
+* Used to create the video of the game needed to create gif for README - https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden 
+* Used for help with README file - https://github.com/Jonathan97-web/Mad-King/blob/main/README.md#tools--technologies-used 
 
