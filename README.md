@@ -184,45 +184,44 @@ validated hangman.py file:
 
 
 ### FUNCTIONAL TESTING
-|   INPUT                      |            action                    |   expected                                                       |   actual                    |
-|------------------------------|--------------------------------------|------------------------------------------------------------------|-----------------------------|
-|* Do you want to see          |-user enters 'y'                      | -instructions display                                            | as expected                 |
-|   instructions?y/n           |                                      | -an input to press ENTER to continue displays                    |                             |
-|                              |                                      |                                                                  |                             |
-|                              |-user enters 'n'                      | -display input to select level                                   | as expected                 |
-|                              |                                      |                                                                  |                             |
-|                              |-user clicks any other button         |-a message error and try again                                    | as expected                 |
-|                              |                                      |                                                                  |                             |
-|*Press enter to proceed       |-user pressed 'enter'                 |-display input to select level                                    | as expected                 |
-|                              |                                      |                                                                  |                             |
-|                              |- user clicks any other option        |- nothing happens unless user follows with 'enter'                | as expected                 |
-|                              |(incl.numbers and special char)       |  no need to clear if user inputs other buttons                   |                             |
-|                              |                                      |  as long as enter is entered                                     |                             |
-|                              |                                      |                                                                  |                             |
-|* Enter 1 for beginners or 2  |- user enters 1                       |- game starts with words of lenght 7                              | as expected                 |
-| for advanced level:          |                                      |                                                                  |                             |
-|                              |- user enters 2                       |- game starts  with words of lenght > 7                           | as expected                 |               
-|                              |                                      |                                                                  |                             |
-|                              |- user enters any other option        |- display appropriate error, show input again                     | as expected                 |
-|                              |(incl.numbers and special char)       |                                                                  |                             |
-|                              |                                      |                                                                  |                             |
-|* Enter the letter here:      |- user enters single letter           |- letter verified in the game, appropriate message displayed      | as expected                 |
-|                              |                                      | to communicate to user if guess was correct or not.              |                             |
-|                              |                                      | If guess was incorrect: add to incorrect list displayed,         |                             |
-|                              |                                      | Hangman updated, remaining lives -1.                             |                             |
-|                              |                                      | If guess was correct: Update letter in word displayed.           |                             |
-|                              |                                      | Game continues, input cleared and ready for another try          |                             |
-|                              |                                      |                                                                  |                             |
-|                              | -user enters multiple letters        | -message error displayed                                         | as expected                 |
-|                              | or any other character               | input printed again to input letter                              |                             |
-|                              |                                      |                                                                  |                             |
-|* Press 1, if you want to     | - user enters 1                      | - game starts again from welcome page                            | as expected                 |
-| start again:                 |                                      |                                                                  |                             |
-|                              |- user enters any other option        | - message error displayed and input printed again                | as expected                 |
-|                              | (incl. numbers and special char)     |                                                                  |                             |
-|                              |                                      |                                                                  |                             |
-|                              |                                      |                                                                  |                             |
-
+|   INPUT                                        |            action                    |   expected                                                       |   actual                    |
+|------------------------------------------------|--------------------------------------|------------------------------------------------------------------|-----------------------------|
+| Do you want to see istructions? y/n:           |-user enters 'y'                      | -instructions display                                            |                             |
+|                                                |                                      | -an input to press ENTER to continue displays                    | as expected                 |
+|                                                |                                      |                                                                  |                             |
+|                                                |-user enters 'n'                      | -display input to select level                                   | as expected                 |
+|                                                |                                      |                                                                  |                             |
+|                                                |-user clicks any other button         |-a message error and try again                                    | as expected                 |
+|                                                |                                      |                                                                  |                             |
+| Press enter to proceed                         |-user pressed 'enter'                 |-display input to select level                                    | as expected                 |
+|                                                |                                      |                                                                  |                             |
+|                                                |- user clicks any other option        |- nothing happens unless user follows with 'enter'                | as expected                 |
+|                                                |(incl.numbers and special char)       |  no need to clear if user inputs other buttons                   |                             |
+|                                                |                                      |  as long as enter is entered                                     |                             |
+|                                                |                                      |                                                                  |                             |
+| Enter 1 for beginners or 2 for advanced level: |- user enters 1                       |- game starts with words of lenght 7                              | as expected                 |
+|                                                |                                      |                                                                  |                             |
+|                                                |- user enters 2                       |- game starts  with words of lenght > 7                           | as expected                 |               
+|                                                |                                      |                                                                  |                             |
+|                                                |- user enters any other option        |- display appropriate error, show input again                     | as expected                 |
+|                                                |(incl.numbers and special char)       |                                                                  |                             |
+|                                                |                                      |                                                                  |                             |
+| Enter the letter here:                         |- user enters single letter           |- letter verified in the game, appropriate message displayed      | as expected                 |
+|                                                |                                      | to communicate to user if guess was correct or not.              |                             |
+|                                                |                                      | If guess was incorrect: add to incorrect list displayed,         |                             |
+|                                                |                                      | Hangman updated, remaining lives -1.                             |                             |
+|                                                |                                      | If guess was correct: Update letter in word displayed.           |                             |
+|                                                |                                      | Game continues, input cleared and ready for another try          |                             |
+|                                                |                                      |                                                                  |                             |
+|                                                | -user enters multiple letters        | -message error displayed                                         | as expected                 |
+|                                                | or any other character               | input printed again to input letter                              |                             |
+|                                                |                                      |                                                                  |                             |
+| Press 1, if you want to start again:           | - user enters 1                      | - game starts again from welcome page                            | as expected                 |
+|                                                |                                      |                                                                  |                             |
+|                                                |- user enters any other option        | - message error displayed and input printed again                | as expected                 |
+|                                                | (incl. numbers and special char)     |                                                                  |                             |
+|                                                |                                      |                                                                  |                             |
+|                                                |                                      |                                                                  |                             |
 APPLICATION DIDN'T BREAK NO MATTER WHAT WAS ENTERED INTO THE INPUTS AND APPROPRIATE ERRORS SHOW.
 
 ## TOOLS AND TECHNOLOGIES
