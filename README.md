@@ -230,11 +230,12 @@ APPLICATION DIDN'T BREAK NO MATTER WHAT WAS ENTERED INTO THE INPUTS AND APPROPRI
 ### IMPORTS
 * I have imported and used Python packages and external packages:
   * `os` : used to clear the terminal with clear() function
+  * `sys` : used to exit program
   * `random`: used to randomly select questions from word list
   * `pyfiglet`: used for additional font for welcome and game over page
   * `english_words`: list of words needed for the game
   * `colorama` - used to apply color to the game in terminal
-  
+
 ## DEPLOYMENT
 The app has been displayed thanks to template provided by Code Institue to allow others to test the code.
 
