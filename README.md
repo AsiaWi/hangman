@@ -105,13 +105,14 @@ The aim of this is to update the user with what they played against, also user c
 
 ![game_over_hangman](assets/docs/game_over_hangman.png)
 
-#### START AGAIN INPUT
-* An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.
-User will see an error if anything other than number 1 gets used.
+#### START AGAIN or EXIT INPUT
+* An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.If they press 2, they will exit the game and the clear message to communicate this to player will display.
 
-The aim of this is to allow the user to easily get back to beggining if they want to play again rather than refreshing the page.
+User will see an error if anything other than number 1 or 2 gets used.
 
-![start_again](assets/docs/start_again.png)
+The aim of this is to allow the user to easily get back to beggining if they want to play again rather than refreshing the page, or to stop running the game if they choose to exit
+
+![start_again_or_exit](assets/docs/start_again_or_exit.png)
 
 ### YOU WON PAGE
 This will show when user uses guesses all letters inside the word
@@ -139,13 +140,14 @@ The aim of this is to make it clear what happend in the game and to connect to t
 
 ![winning_hangman](assets/docs/winning_hangman.png)
 
-#### START AGAIN INPUT
-* An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.
-User will see an error if anything other than number 1 gets used.
+#### START AGAIN or EXIT INPUT
+* An input available to the user. If they press 1, the program will start from the beggining, taking them to welcome page and allowing the program to select new word for fresh round.If they press 2, they will exit the game and the clear message to communicate this to player will display.
 
-The aim of this is to allow the user to easily get back to beggining if they want to play again rather than refreshing the page.
+User will see an error if anything other than number 1 or 2 gets used.
 
-![start_again](assets/docs/start_again.png)
+The aim of this is to allow the user to easily get back to beggining if they want to play again rather than refreshing the page, or to stop running the game if they choose to exit
+
+![start_again_or_exit](assets/docs/start_again_or_exit.png)
 
 ### FUTURE FEATURES
 * Add different word lists for users to be able to choose a theme they would like to play.( Animals, music geography etc)
