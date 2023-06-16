@@ -148,7 +148,7 @@ def letter_choice():
     return (letter.upper())
 
 
-def start_again():
+def start_again_or_exit():
     '''
     Will provide an option for user to start again
     and will verify users input
@@ -262,7 +262,7 @@ def game_loop(word):
                 correct_guess += letter
                 if winner(word, correct_guess):
                     hangman.print_hangman_win()
-                    start_again()
+                    start_again_or_exit()
                     clear()
                     break
                 continue
@@ -279,7 +279,7 @@ def game_loop(word):
                 lives -= 1
                 if game_over(word, chances):
                     hangman.print_hangman(update_display_hangman)
-                    start_again()
+                    start_again_or_exit()
                     clear()
                     break
                 else:
