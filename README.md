@@ -216,16 +216,18 @@ APPLICATION DIDN'T BREAK NO MATTER WHAT WAS ENTERED INTO THE INPUTS AND APPROPRI
 ## TOOLS AND TECHNOLOGIES
 * Python - back end programming
 * Github - used to store code online
-* Git - version control:
+* Heroku - to deploy the app 
+* [**Screen Record**](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden) extension to create video of the game for README file
+* [**Ezgif**](https://ezgif.com/video-to-gif) - to convert video into gif for README file
+
+### VERSION CONTROL
+* Git 
 
     Code has been pushed with git commands to remote repository on Github with commands:
    * git add . - to add files ready to commit
    * git commit -m "message" - to commit the code to local 
     repository ready to be pushed
   * git push - final command used to push commited code to remote repo on Github
-* Heroku - to deploy the app 
-* [**Screen Record**](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden) extension to create video of the game for README file
-* [**Ezgif**](https://ezgif.com/video-to-gif) - to convert video into gif for README file
    
 ### IMPORTS
 * I have imported and used Python packages and external packages:
@@ -239,7 +241,27 @@ APPLICATION DIDN'T BREAK NO MATTER WHAT WAS ENTERED INTO THE INPUTS AND APPROPRI
 ## DEPLOYMENT
 The app has been displayed thanks to template provided by Code Institue to allow others to test the code.
 
-The project has been deployed on Heroku as follows:
+* The project has been deployed on Heroku as follows:
+     * Use: `pip freeze > requirements.txt` to add external libraries to deployed app.
+     * Create Heroku account ( step by step guide [here](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql))
+     * In the top right, click 'New'
+     * Click 'Create new app'
+     * Give your app a name and select your region from drop down 
+     * Click 'Create new app' 
+     * Go to 'settings' tab, it's important you do it before deployment
+     * Scroll down to 'config vars' section and key: PORT and value: 8000
+     * Scroll down to 'Buildpacks' section
+     * Click 'Add buildpack'
+     * Add Python as first dependency and select 'Save changes'
+     * Add node.js as a second dependency and save again
+     (This is settings section done)
+     * Select 'Deploy' tab at the top
+     * Select ' Github' from 'Deployment method'
+     * type the name of how you called project in Github and click 'search'
+     * Scroll down and select manual deployment method
+     * Auto method has also been selected to allow the project to update every time i push the code from Gitpod
+     * You can now click to view the app ready and running
+
 
 
 ## CLONING THE REPOSITORY
