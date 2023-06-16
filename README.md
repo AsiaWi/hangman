@@ -158,14 +158,6 @@ I have used [**LUCIDCHART**](https://www.lucidchart.com) to create a flow chart 
 
 ![flowchart_hangman](assets/docs/flowchart_hangman.png)
 
-### IMPORTS
-* I have imported and used Python packages and external packages:
-  * `os` : used to clear the terminal with clear() function
-  * `random`: used to randomly select questions from word list
-  * `Figlet`: used for additional font for welcome and game over page
-  * `get_english_words_set`: list of words needed for the game
-  * `colorama` - used to apply color to the game in terminal
-
 ## TESTING
 
 ** ** **  Please note this game will not work on mobiles as it runs on the mock terminal. (cred. Mock terminal created by Code Institute). No accessibilty or responsivity testing was therefore needed. ** ** **
@@ -179,9 +171,6 @@ I have used [**LUCIDCHART**](https://www.lucidchart.com) to create a flow chart 
 ![code_validate_run](assets/docs/run.py_validate.png)
 validated hangman.py file:
 ![code_validate_hangman](assets/docs/hangman.py_validate.png)
-
-
-
 
 ### FUNCTIONAL TESTING
 |   INPUT                                        |            action                    |   expected                                                       |   actual                    |
@@ -238,7 +227,14 @@ APPLICATION DIDN'T BREAK NO MATTER WHAT WAS ENTERED INTO THE INPUTS AND APPROPRI
 * [**Screen Record**](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden) extension to create video of the game for README file
 * [**Ezgif**](https://ezgif.com/video-to-gif) - to convert video into gif for README file
    
-
+### IMPORTS
+* I have imported and used Python packages and external packages:
+  * `os` : used to clear the terminal with clear() function
+  * `random`: used to randomly select questions from word list
+  * `pyfiglet`: used for additional font for welcome and game over page
+  * `english_words`: list of words needed for the game
+  * `colorama` - used to apply color to the game in terminal
+  
 ## DEPLOYMENT
 The app has been displayed thanks to template provided by Code Institue to allow others to test the code.
 

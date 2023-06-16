@@ -5,6 +5,7 @@
 import random
 import hangman
 import os
+import sys
 from colorama import Fore, Back, Style
 from pyfiglet import Figlet
 from english_words import get_english_words_set
@@ -158,7 +159,7 @@ def start_again():
     '''
     while True:
 
-        new_game = input('Press 1, if you want to start again!: ')
+        new_game = input('Press 1, if you want to start again or 2 to exit: ')
 
         try:
             new_game = int(new_game)
@@ -169,6 +170,8 @@ def start_again():
         if new_game == 1:
             main()
             break
+        elif new_game == 2:
+            sys.exit()
         else:
             print(Fore.RED + 'Invalid number')
             print(Style.RESET_ALL)
