@@ -171,6 +171,7 @@ def start_again():
             main()
             break
         elif new_game == 2:
+            clear()
             sys.exit("you've left the game")
         else:
             print(Fore.RED + 'Invalid number')
